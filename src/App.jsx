@@ -1,9 +1,9 @@
-import { use State } from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Projects from './pages/projects';
 import Tasks from "./pages/tasks";
 import Login from "./pages/login";
-import Team from './pages/team';
+import Team from './pages/teams';
 import Settings from './pages/settings';
 import Clients from './pages/clients';
 import Dashboard from './pages/dashboard';
@@ -11,14 +11,7 @@ import Calendar from './pages/calendar';
 
 
 function App() {
-  
-  {/*
-  const[email, setEmail] = useState("");
-  const[password, setPassword] = useState("");
-  const formsubmit = (e) => {
-    e.preventDefault();
-    console.log({ email, password });
-  */}
+
 
   return (
     <>
@@ -54,5 +47,6 @@ function App() {
   );
   
 }
+
 
 export default App;

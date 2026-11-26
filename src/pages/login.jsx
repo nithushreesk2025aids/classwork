@@ -1,14 +1,34 @@
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const navigate =  useNavigate
+
+  const [formData, setFormData] = useState({ username: "", password: "" });
+
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("Login Successfull")
+    navigate("/dashboard", {
+      state:formData
+    }
+    )
+    console.log(formData);
+  }
+
   return (
-    <div className="login-container">
-      <h2>HI</h2>
-
-      <input type="email" placeholder="Enter your email" />
-
-      <input type="password" placeholder="Enter your password" />
-
-      <button type="submit">Submit</button>
+    <div>
+      <h1>Login Page</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="username" placeholder="Enter Username" value={formData.username} onChange={handleChange} required />
+        <br />
+        <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange} required />
+        <br />
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
 }
