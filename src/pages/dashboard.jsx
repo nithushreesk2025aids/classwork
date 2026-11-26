@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {useLocation} from  "react-router-dom";
 function Dashboard() {
     const location = useLocation();
@@ -7,9 +8,7 @@ function Dashboard() {
         console.log(userData)
     }
     return (  
-        <>
-            <button onClick = {displaydata}>button</button>
-        </>
-    );
+  <button onClick={displaydata}>button</button>
+);
 }
 export default Dashboard;
